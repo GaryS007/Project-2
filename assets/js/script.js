@@ -8,10 +8,10 @@ let modal = document.getElementById("main-modal");
 let btn = document.getElementById("modal-button");
 
 btn.addEventListener('click', function() {
-    closeModal()
+    closeModal();
 })
 
-// runGame function is designed to implement which choice the player takes.
+// Player Choice inserts rock/paper/scissors icon
 
 let playerBox = document.getElementById('player-choice');
 
@@ -33,13 +33,56 @@ let scissors = document.getElementById("scissors");
 
 
 rock.addEventListener('click', function() {
-    rockChoice()
+    rockChoice();
+    computerChoiceDelay();
 })
 
 paper.addEventListener('click', function() {
-    paperChoice()
+    paperChoice();
+    computerChoiceDelay();
 })
 
 scissors.addEventListener('click', function() {
-    scissorsChoice()
+    scissorsChoice();
+    computerChoiceDelay();
 })
+
+
+// Computer Choices insert rock/paper/scissors after a 1 second delay
+
+let computerBox = document.getElementById('computer-choice');
+
+function rockChoiceAi() {
+    computerBox.innerHTML = '<i class="fa-solid fa-hand-back-fist"></i>';
+}
+
+function paperChoiceAi() {
+    computerBox.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+}
+
+function scissorsChoiceAi() {
+    computerBox.innerHTML = '<i class="fa-solid fa-scissors"></i>';
+}
+
+let computerOptions = [ 
+    'rock',
+    'paper',
+    'scissors'
+];
+
+
+function computerChoice() {
+    let computerRandom = computerOptions[Math.floor(Math.random() * computerOptions.length)]
+
+    if (computerRandom === 'rock') {
+        rockChoiceAi();
+    } else if (computerRandom === 'paper') {
+        paperChoiceAi();
+    } else if (computerRandom === 'scissors') {
+        scissorsChoiceAi();
+    }
+}
+
+function computerChoiceDelay() {
+    setTimeout(computerChoice, 1000);
+}
