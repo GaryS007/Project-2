@@ -27,6 +27,9 @@ function scissorsChoice() {
     playerBox.innerHTML = '<i class="fa-solid fa-scissors"></i>';
 }
 
+
+// Event Listeners for Rock/Paper/Scissors buttons
+
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
@@ -34,16 +37,19 @@ let scissors = document.getElementById("scissors");
 
 rock.addEventListener('click', function() {
     rockChoice();
+    removeChoiceAi();
     computerChoiceDelay();
 })
 
 paper.addEventListener('click', function() {
     paperChoice();
+    removeChoiceAi();
     computerChoiceDelay();
 })
 
 scissors.addEventListener('click', function() {
     scissorsChoice();
+    removeChoiceAi();
     computerChoiceDelay();
 })
 
@@ -62,6 +68,10 @@ function paperChoiceAi() {
 
 function scissorsChoiceAi() {
     computerBox.innerHTML = '<i class="fa-solid fa-scissors"></i>';
+}
+
+function removeChoiceAi() {
+    computerBox.innerHTML = '';
 }
 
 let computerOptions = [ 
@@ -83,6 +93,10 @@ function computerChoice() {
     }
 }
 
+
 function computerChoiceDelay() {
-    setTimeout(computerChoice, 1000);
+    setTimeout(computerChoice, 500);
 }
+
+// Calculates who the winner is
+
