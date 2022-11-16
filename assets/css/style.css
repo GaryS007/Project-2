@@ -107,6 +107,14 @@ body {
   z-index: -1;
 }
 
+.btn3 {
+  z-index: 3 !important;
+}
+
+.btn3:after {
+  z-index: 2 !important;
+}
+
 .btn:hover:after {
   transform: translate(0, 0);
 }
