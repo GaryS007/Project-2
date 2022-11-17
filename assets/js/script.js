@@ -1,3 +1,7 @@
+const computerChoiceTimeoutDelay = 500;
+const resultTimeoutDelay = 1000;
+
+
 // closeModal allows you to close the Modal when you Start Game
 
 function closeModal() {
@@ -110,13 +114,13 @@ function computerChoice() {
     }
 }
 
-
 function computerChoiceDelay() {
     setTimeout(
         function() {
             computerChoice();
             chooseWinner();
-        }, 500);
+
+        }, computerChoiceTimeoutDelay);
     }
 
 // Calculates who the winner is
@@ -137,13 +141,79 @@ let results = document.getElementById('results');
 
 function resultsWin() {
     results.innerHTML = '<h4>You Win!</h4>';
+    incrementPlayerScore();
+    if (playerScore == 3) {
+        setTimeout(
+            function() {
+                gameOver(true);
+            }, resultTimeoutDelay
+        );
+    }
 
 }
 
 function resultsLose() {
     results.innerHTML = '<h4>You Lose!</h4>';
+    incrementComputerScore();
+    if (computerScore == 3) {
+        setTimeout(
+            function() {
+                gameOver(false);
+            }, resultTimeoutDelay
+        );
+    }
 }
 
 function resultsDraw() {
     results.innerHTML = '<h4>DRAW!</h4>';
 }
+
+let playerScore = 0;
+let computerScore = 0;
+
+let playerScoreBox = document.getElementById('player-score');
+let computerScoreBox = document.getElementById('computer-score');
+
+function incrementPlayerScore() {
+    playerScoreBox.innerText = ++playerScore;
+}
+
+function incrementComputerScore() {
+    computerScoreBox.innerText = ++computerScore;
+}
+
+function gameOver(win) {
+    if (win == true) {
+        alert('win');
+    } else {
+        alert('lose');  
+    }
+}
+
+
+/* function getResult() {
+    if (resultsWin() == true) {
+        return 'playerWin'
+    } else if (resultsLose() == true) {
+        return 'playerLose'
+    }  else if (resultsDraw() == true) {
+        // do nothing
+    }
+}
+*/
+/*
+function calculateScore() {
+    if (resultsWin() == true) {
+        incrementPlayerScore();
+    } else if (resultsLose() == true) {
+        incrementComputerScore();
+    } else if (resultsDraw() == true) {
+        // do nothing
+    }
+}
+
+
+let result = getResult();
+
+*/
+
