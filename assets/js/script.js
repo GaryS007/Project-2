@@ -1,3 +1,5 @@
+// timeOut variables
+
 const computerChoiceTimeoutDelay = 500;
 const resultTimeoutDelay = 1000;
 
@@ -238,5 +240,27 @@ function gameOver(win) {
     } else {
         launchLoseModal();   
     }
+}
+
+// difficulty
+
+let stylesheet = document.getElementById('stylesheet');
+let darkModeButton = document.getElementById('dark-btn');
+let lightModeButton = document.getElementById('light-btn');
+
+darkModeButton.addEventListener('click', function() {
+    darkMode();
+})
+
+lightModeButton.addEventListener('click', function() {
+    lightMode();
+})
+
+function darkMode() {
+    stylesheet.href = 'assets/css/style2.css';
+}
+
+function lightMode() {
+    stylesheet.href = 'assets/css/style.css';
 }
 
