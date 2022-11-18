@@ -12,7 +12,9 @@ p {
   font-weight: bolder;
 }
 
-#main-modal {
+/* -----Modal styling----- */
+
+#main-modal, #win-modal-container {
     position: absolute;
     z-index: 1;
     left: 0;
@@ -24,7 +26,11 @@ p {
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+#win-modal-container {
+  display: none;
+}
+
+.modal-content, #win-modal-content {
     background-color: #fefefe;
     position: relative;
     z-index: 1;
@@ -33,6 +39,8 @@ p {
     border: 1px solid #888;
     width: 60%;
 }
+
+/* ----- Game Area Styling ----- */
 
 #game-area {
     box-sizing: border-box;
