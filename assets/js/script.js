@@ -2,7 +2,7 @@ const computerChoiceTimeoutDelay = 500;
 const resultTimeoutDelay = 1000;
 
 
-// closeModal allows you to close the Modal when you Start Game
+// closeModal allows player to close the Modal when you Start Game
 
 function closeModal() {
     modal.style.display = "none";
@@ -14,6 +14,56 @@ let btn = document.getElementById("modal-button");
 btn.addEventListener('click', function() {
     closeModal();
 })
+
+
+
+// launchWinModal / closeWinModal acknowledges victory and resets score if they Play Again 
+
+let winModal = document.getElementById("win-modal-container");
+let winBtn = document.getElementById("win-btn");
+
+winBtn.addEventListener('click', function() {
+    closeWinModal();
+})
+
+function launchWinModal() {
+    winModal.style.display = "block";
+}
+
+
+function closeWinModal() {
+    winModal.style.display = "none";
+    reset();
+}
+
+/**
+* This function resets player & computer score.
+*/
+function reset() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreBox.innerText = playerScore;
+    computerScoreBox.innerText = playerScore; 
+}
+
+// loseModal
+
+let loseModal = document.getElementById("lose-modal-container");
+let loseBtn = document.getElementById("lose-btn");
+
+loseBtn.addEventListener('click', function() {
+    closeLoseModal();
+})
+
+function launchLoseModal() {
+    loseModal.style.display = "block";
+}
+
+
+function closeLoseModal() {
+    loseModal.style.display = "none";
+    reset();
+}
 
 // Player Choice inserts rock/paper/scissors icon
 
@@ -184,9 +234,9 @@ function incrementComputerScore() {
 
 function gameOver(win) {
     if (win == true) {
-        alert('win');
+        launchWinModal();
     } else {
-        alert('lose');  
+        launchLoseModal();   
     }
 }
 

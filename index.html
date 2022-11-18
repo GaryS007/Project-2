@@ -26,18 +26,25 @@
             <p>First to <b>3</b> wins!</p>
             <p>Simply choose 1 of the options - Rock, Paper or Scissors.</p>
             <p>Change difficulty during your game to further test your luck!</p>
-            <button data-type="close-modal" id="modal-button" class="btn btn2 btn3">Play Game</button>
+            <button data-type="close-modal" id="modal-button" class="btn btn2">Play Game</button>
         </div>
+    </div>
     <!-- You Win Modal displays after 3 wins is reached -->   
-    <div id="win-modal-container">
+    <div id="win-modal-container" style="display: none;">
         <div id="win-modal-content">
             <h2>Congratulations, luck is on your side!</h2>
-            <p>You have successfully defeated the opponent on ${difficulty}</p>
+            <p>You have successfully defeated the opponent on ${difficulty}.</p>
             <p>Are you brave enough to continue and test your skills on a higher difficulty?</p>
-            <button data-type="close-modal" id="modal-button" class="btn btn2">Play Again</button>
+            <button data-type="close-modal" id="win-btn" class="btn btn2">Play Again</button>
+        </div>
+    </div>
+    <div id="lose-modal-container" style="display: none;">
+        <div id="lose-modal-content">
+            <h2>DEFEAT! You have been defeated by the Computer on ${difficulty}.</h2>
+            <p>Don't be to upset though, you can always Play Again!</p>
+            <button data-type="close-modal" id="lose-btn" class="btn btn2">Play Again</button>
         </div>
     </div> 
-    </div>
     <!-- Heading and Scores section -->
     <h1 class="heading">Rock, Paper and Scissors Game!</h1>
     <div id="score-area">
