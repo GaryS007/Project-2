@@ -190,30 +190,3 @@ function gameOver(win) {
     }
 }
 
-
-/* function getResult() {
-    if (resultsWin() == true) {
-        return 'playerWin'
-    } else if (resultsLose() == true) {
-        return 'playerLose'
-    }  else if (resultsDraw() == true) {
-        // do nothing
-    }
-}
-*/
-/*
-function calculateScore() {
-    if (resultsWin() == true) {
-        incrementPlayerScore();
-    } else if (resultsLose() == true) {
-        incrementComputerScore();
-    } else if (resultsDraw() == true) {
-        // do nothing
-    }
-}
-
-
-let result = getResult();
-
-*/
-

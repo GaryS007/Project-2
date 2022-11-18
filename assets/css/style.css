@@ -7,6 +7,11 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+p {
+
+  font-weight: bolder;
+}
+
 #main-modal {
     position: absolute;
     z-index: 1;
@@ -52,6 +57,18 @@ body {
 #computer-choice i, #player-choice i {
     font-size: 10rem;
     padding-top: 5rem;
+}
+
+/* Score Area */
+
+#score-area {
+  font-weight: bolder;
+}
+
+/* Results */
+
+#results {
+  height: 4vh;
 }
 
 /* Game Options section */
@@ -122,8 +139,31 @@ body {
   outline: 0;
 }
 
+/* Responsive styling */
+
 @media (min-width: 768px) {
   .btn {
     padding: 0 40px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  #computer-choice i, #player-choice i {
+    font-size: 7rem;
+  }
+  #game-area {
+    height: 30vh;
+  }
+
+  #game-options {
+    margin-top: 1rem;
+  }
+
+}
+
+@media (max-width: 489px) {
+  .impossible--btn {
+    margin-top: 1rem;
   }
 }
