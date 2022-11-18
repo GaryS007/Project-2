@@ -242,7 +242,7 @@ function gameOver(win) {
     }
 }
 
-// difficulty
+// Light & Dark Mode functions
 
 let stylesheet = document.getElementById('stylesheet');
 let darkModeButton = document.getElementById('dark-btn');
