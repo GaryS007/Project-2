@@ -65,6 +65,7 @@ p {
 #computer-choice i, #player-choice i {
     font-size: 10rem;
     padding-top: 5rem;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 /* Score Area */
