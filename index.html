@@ -15,8 +15,8 @@
 </head>
 <body>
     <!-- Main Modal that pops up when game loads -->
-    <button id="dark-btn" class="btn btn2">Dark Mode</button>
-    <button id="light-btn" class="btn btn2">Light Mode</button>
+    <button id="dark-btn" class="btn btn2"><i class="fa-solid fa-moon"></i></button>
+    <button id="light-btn" class="btn btn2"><i class="fa-solid fa-lightbulb"></i></button>
     <div id="main-modal">
         <div class="modal-content">
             <h2>Rock Paper Scissors Game!</h2>
@@ -25,24 +25,23 @@
             <p>Paper beats rock;</p>
             <p>Scissors beats paper.</p>
             <p>If both players use the same signal, it is considered a draw and the game continues until we have a clear winner.</p>
-            <p>First to <b>3</b> wins!</p>
+            <p>First to <b>5</b> wins!</p>
             <p>Simply choose 1 of the options - Rock, Paper or Scissors.</p>
-            <p>Change difficulty during your game to further test your luck!</p>
             <button data-type="close-modal" id="modal-button" class="btn btn2">Play Game</button>
         </div>
     </div>
     <!-- You Win Modal displays after 3 wins is reached -->   
     <div id="win-modal-container" style="display: none;">
         <div id="win-modal-content">
-            <h2>Congratulations, luck is on your side!</h2>
-            <p>You have successfully defeated the opponent on ${difficulty}.</p>
-            <p>Are you brave enough to continue and test your skills on a higher difficulty?</p>
+            <h2 id="win-txt">Congratulations, luck is on your side!</h2>
+            <p>You have successfully defeated the computer!</p>
+            <p>Want to try again?</p>
             <button data-type="close-modal" id="win-btn" class="btn btn2">Play Again</button>
         </div>
     </div>
     <div id="lose-modal-container" style="display: none;">
         <div id="lose-modal-content">
-            <h2>DEFEAT! You have been defeated by the Computer on ${difficulty}.</h2>
+            <h2>DEFEAT! You have been defeated by the Computer!</h2>
             <p>Don't be to upset though, you can always Play Again!</p>
             <button data-type="close-modal" id="lose-btn" class="btn btn2">Play Again</button>
         </div>
@@ -88,13 +87,14 @@
             <i class="fa-solid fa-scissors"></i>
         </button>
     </div>
-    <!-- Change Difficulty section -->
+    <!-- Change Difficulty section removed due to bug
     <div id="change-difficulty">
         <p>Change your difficulty:</p>
-        <button data-type="easy" class="btn btn2 easy--btn">Easy-Mode</button>
-        <button data-type="challenging" class="btn btn2 challenging--btn">Challenging</button>
-        <button data-type="impossible" class="btn btn2 impossible--btn">Impossible</button>
+        <button id="easy" class="btn btn2 easy--btn">Easy-Mode</button>
+        <button id="challenging" class="btn btn2 challenging--btn">Challenging</button>
+        <button id="impossible" class="btn btn2 impossible--btn">Impossible</button>
     </div>
+        -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
