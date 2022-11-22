@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // timeOut variables
 
 const computerChoiceTimeoutDelay = 500;
@@ -16,7 +18,7 @@ let btn = document.getElementById("modal-button");
 
 btn.addEventListener('click', function() {
     closeModal();
-})
+});
 
 
 
@@ -24,11 +26,10 @@ btn.addEventListener('click', function() {
 
 let winModal = document.getElementById("win-modal-container");
 let winBtn = document.getElementById("win-btn");
-let modalTxt = document.getElementById("win-txt")
 
 winBtn.addEventListener('click', function() {
     closeWinModal();
-})
+});
 
 /**
  * When the player wins this function changes display from none to block
@@ -64,7 +65,7 @@ let loseBtn = document.getElementById("lose-btn");
 
 loseBtn.addEventListener('click', function() {
     closeLoseModal();
-})
+});
 
 /**
  * When the player loses this function changes display from none to block
@@ -127,23 +128,23 @@ rock.addEventListener('click', function() {
     removeChoiceAi();
     removeResults();
     computerChoiceDelay();
-})
+});
 
 paper.addEventListener('click', function() {
-    preventMultiplePaperClicks()
+    preventMultiplePaperClicks();
     paperChoice();
     removeChoiceAi();
     removeResults();
     computerChoiceDelay();
-})
+});
 
 scissors.addEventListener('click', function() {
-    preventMultipleScissorsClicks()
+    preventMultipleScissorsClicks();
     scissorsChoice();
     removeChoiceAi();
     removeResults();
     computerChoiceDelay();
-})
+});
 
 
 // Computer Choices insert rock/paper/scissors after a 1 second delay
@@ -199,7 +200,7 @@ let computerOptions = [
  * Randomly selects computers choice from array of computerOptions
  */
 function computerChoice() {
-    let computerRandom = computerOptions[Math.floor(Math.random() * computerOptions.length)]
+    let computerRandom = computerOptions[Math.floor(Math.random() * computerOptions.length)];
 
     if (computerRandom === 'rock') {
         rockChoiceAi();
@@ -227,17 +228,35 @@ function computerChoiceDelay() {
 /**
  * Compares player & computer choices
  * Calls other functions if true or false
- */
+
 function chooseWinner() {
     if (player == computer) {
         resultsDraw();
     } else if (computer == 'rock'){
-        (player == 'paper') ? resultsWin() : resultsLose()
+        (player == 'paper') ? resultsWin() : resultsLose();
     } else if (computer == 'paper'){
-        (player == 'scissors') ? resultsWin() : resultsLose()
+        (player == 'scissors') ? resultsWin() : resultsLose();
     } else if (computer == 'scissors'){
-        (player == 'rock') ? resultsWin() : resultsLose()
+        (player == 'rock') ? resultsWin() : resultsLose();
     }
+}
+*/
+
+function chooseWinner() {
+    if (player == computer) {
+        resultsDraw();
+    }
+    else if (isPlayerVictorious()) {
+        resultsWin();
+    } else {
+        resultsLose();
+    }
+}
+
+function isPlayerVictorious() {
+    return  (computer == 'rock' && player == 'paper') || 
+            (computer == 'paper' && player == 'scissors') || 
+            (computer =='scissors' && player == 'rock');
 }
 
 let results = document.getElementById('results');
@@ -326,11 +345,11 @@ let lightModeButton = document.getElementById('light-btn');
 
 darkModeButton.addEventListener('click', function() {
     darkMode();
-})
+});
 
 lightModeButton.addEventListener('click', function() {
     lightMode();
-})
+});
 
 function darkMode() {
     stylesheet.href = 'assets/css/style2.css';
@@ -350,7 +369,7 @@ function preventMultipleRockClicks() {
     rock.disabled = true;
     setTimeout(function() {
         rock.disabled = false;
-    }, resultTimeoutDelay )
+    }, resultTimeoutDelay );
 }
 
 /**
@@ -361,7 +380,7 @@ function preventMultiplePaperClicks() {
     paper.disabled = true;
     setTimeout(function() {
         paper.disabled = false;
-    }, resultTimeoutDelay )
+    }, resultTimeoutDelay );
 }
 
 /**
@@ -372,5 +391,5 @@ function preventMultipleScissorsClicks() {
     scissors.disabled = true;
     setTimeout(function() {
         scissors.disabled = false;
-    }, resultTimeoutDelay )
+    }, resultTimeoutDelay );
 }

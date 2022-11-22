@@ -1,108 +1,108 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock Paper Scissors Game
 
-Welcome GaryS007,
+Rock Paper Scissors game is the original game we all know and love from when we were kids. This is a web based game that was built using HTML, CSS and Javascript. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Players will need to pick the correct option to win a round and then reach 5 wins to beat the computer. It includes a Dark & Light mode theme option and is fun for anyone looking to revisit such a nostalgic game.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Features
 
-## Gitpod Reminders
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+**Header**
 
-`python3 -m http.server`
+- Located at the top of the page containing the name 'Rock Paper Scissors Game'.
+- Using the main website colour #39FF14.
+- Light & Dark Mode options are also featured as a part of the header.
 
-A blue button should appear to click: _Make Public_,
+**Player & Computer Score**
 
-Another blue button should appear to click: _Open Browser_.
+- Player and Computer score is displayed here. 
+- Score is updated after the computers option is displayed.
+- This section is designed to reset after the player chooses to start a new game.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+**Game Area**
 
-A blue button should appear to click: _Make Public_,
+- Player and Computer choices will be displayed here to offer a more visual element to the game.
+- Once player has selected an option, the computer choice will display 500ms later to build an element of suspense.
+- Computers Choice is randomly decided using JavaScript.
+- I used placeholder '?' icons to make use of space in the absence of a player choice at the start of a game.
+- All Icons were provided by [Font Awesome](https://fontawesome.com/icons).
 
-Another blue button should appear to click: _Open Browser_.
+**Results**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- The result of each turn is displayed here.
+- The result being displayed is sharing the same timeout function as the computer choice being displayed. 
+- I created a removeResults function to remove the results each time an option is selected.
 
-To log into the Heroku toolbelt CLI:
+**Player Choices**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- 3 Buttons to enable the player to pick Rock, Paper or Scissors. 
+- All buttons share the same retro styling.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**Window Modals**
 
-------
+- Main Modal Window - This modal window will launch when the player visits the website. It displays the rules of the game and includes a Start Game button that closes the modal window.
+- Win Modal Window - This modal window will launch when the player wins 5 rounds. It provides a congratulations message as well as the ability to play again.
+- Lose Modal Window - This modal window will launch when the player loses 5 rounds. It notifies the player of their defeat and allows them to play again.
 
-## Release History
+### Future Implementations
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Add game difficulties that changes the computer logic and increases the computer chance to win by allowing the computer to roll twice to defeat the player.
+- Add sound options for click sounds when buttons are pressed and when win/lose modal appears.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Tecnologies Used
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Gitpod
+- Github
+- HTML5
+- CSS3
+- Font Awesome - All Icons came from here
+- Gimp 2 - Used for resizing, cropping and compression of imagery
+- MSPaint - Used to create wireframes instead of Balsamiq.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Fonts & Colours
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Fonts
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Ubuntu, sans-serif
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Colours
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+I used Neon Green as the primary colour and a dark grey/black as a secondary. I then inverted my colours to see how it would look. I couldn't choose which I preferred so decided to make a light/dark mode themed options.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Neon Green - #39FF14
+- Dark Grey - #424242
+- Black was used for button shadows and general shading.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Mock Design
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+My subscription to Balsamiq expired so I used MSPaint to create a simple wireframe for my game. I made some alterations to the design during the build but this helped build the foundation of my game.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+I tested my website throughout the build using dev tools. All buttons and modal windows were tested extensively on various browsers. Responsiveness was also tested using dev tools. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+All player option buttons were tested to check:
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Every button is functioning as expected and displaying the appropriate value.
+- That the computers response provides a random value every turn.
+- That the computer response is done using the 500ms timeout.
+- That the result message is displaying the correct value depending on who won that round.
 
-------
+All Modal Buttons were tested to ensure:
 
-## FAQ about the uptime script
+- Modal window must close when the player clicks the appropriate button.
+- The scores reset when the modal window is closed.
 
-**Why have you added this script?**
+Light & Dark Mode themes:
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Tested to ensure the correct theme is applied.
+- Tested to ensure scores are not affected in the middle of a game when theme is changed.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Validator Testing
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- HTML - No errors were returned passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgarys007.github.io%2FProject-2%2F)
+- CSS - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgarys007.github.io%2FProject-2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- JavaScript - 

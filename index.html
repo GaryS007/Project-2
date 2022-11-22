@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="stylesheet" rel="stylesheet" href="assets/css/style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    
+
     <!-- Font awesome and google fonts -->
     <script src="https://kit.fontawesome.com/0b9b5a737a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
     <title>Rock Paper Scissors Game!</title>
 </head>
+
 <body>
     <!-- Main Modal that pops up when game loads -->
     <button id="dark-btn" class="btn btn2"><i class="fa-solid fa-moon"></i></button>
@@ -30,7 +32,7 @@
             <button data-type="close-modal" id="modal-button" class="btn btn2">Play Game</button>
         </div>
     </div>
-    <!-- You Win Modal displays after 3 wins is reached -->   
+    <!-- You Win Modal displays after 3 wins is reached -->
     <div id="win-modal-container" style="display: none;">
         <div id="win-modal-content">
             <h2 id="win-txt">Congratulations, luck is on your side!</h2>
@@ -45,17 +47,17 @@
             <p>Don't be to upset though, you can always Play Again!</p>
             <button data-type="close-modal" id="lose-btn" class="btn btn2">Play Again</button>
         </div>
-    </div> 
+    </div>
     <!-- Heading and Scores section -->
     <h1 class="heading">Rock Paper Scissors Game!</h1>
     <div id="score-area">
-        <p class="scores">Player 1 score: <span id="player-score">0</span></p>
+        <p class="scores">Player score: <span id="player-score">0</span></p>
         <p class="scores">Computer score: <span id="computer-score">0</span></p>
     </div>
     <!-- Game Area where Font Awesome Icons are loaded for Player & Computer Choices-->
     <div id="game-area">
         <div id="player-area">
-            <p class="player-name">Player 1</p>
+            <p class="player-name">Player</p>
             <div id="player-choice">
                 <i class="fa-solid fa-question"></i>
             </div>
@@ -72,7 +74,7 @@
         <h3>Results:</h3>
     </div>
     <div id="results">
-        
+
     </div>
     <!-- Player game choices section -->
     <div id="game-options">
@@ -87,14 +89,7 @@
             <i class="fa-solid fa-scissors"></i>
         </button>
     </div>
-    <!-- Change Difficulty section removed due to bug
-    <div id="change-difficulty">
-        <p>Change your difficulty:</p>
-        <button id="easy" class="btn btn2 easy--btn">Easy-Mode</button>
-        <button id="challenging" class="btn btn2 challenging--btn">Challenging</button>
-        <button id="impossible" class="btn btn2 impossible--btn">Impossible</button>
-    </div>
-        -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
