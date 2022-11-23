@@ -177,11 +177,11 @@ p {
 
   #computer-choice i,
   #player-choice i {
-      font-size: 7rem;
+      font-size: 5rem;
   }
 
   #game-area {
-      height: 20vh;
+      height: 25vh;
   }
 
   #game-options {
@@ -193,6 +193,10 @@ p {
 @media (max-width: 489px) {
   h3 {
       margin-top: 3rem;
+  }
+
+  h1 {
+    font-size: 1.25em;
   }
 }
 

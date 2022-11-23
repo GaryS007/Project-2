@@ -2,8 +2,8 @@
 
 // timeOut variables
 
-const computerChoiceTimeoutDelay = 500;
-const resultTimeoutDelay = 1000;
+const computerChoiceTimeoutDelay = 0;
+const resultTimeoutDelay = 0;
 
 
 /**
