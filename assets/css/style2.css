@@ -195,3 +195,10 @@ p {
       margin-top: 3rem;
   }
 }
+
+@media (max-width: 300px) {
+  #computer-choice i,
+  #player-choice i {
+  font-size: 3rem;
+  }
+}

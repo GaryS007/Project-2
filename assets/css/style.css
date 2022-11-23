@@ -176,8 +176,19 @@ p {
 
 }
 
-@media (max-width: 489px)  {
-    h3 {
-        margin-top: 3rem;
-    }
+@media (max-width: 489px) {
+  h3 {
+    margin-top: 3rem;
   }
+
+  #results {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 300px) {
+  #computer-choice i,
+  #player-choice i {
+  font-size: 2rem;
+  }
+}
