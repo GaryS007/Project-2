@@ -149,6 +149,11 @@ p {
   outline: 0;
 }
 
+#dark-btn, 
+#light-btn {
+  padding: 0 15px;
+}
+
 
 /* Responsive styling */
 
@@ -193,6 +198,11 @@ p {
 @media (max-width: 300px) {
   #computer-choice i,
   #player-choice i {
-  font-size: 2rem;
+  font-size: 4rem;
+  }
+
+  #player-area,
+  #computer-area {
+    font-size: 1.25rem;
   }
 }
