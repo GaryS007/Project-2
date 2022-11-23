@@ -225,22 +225,6 @@ function computerChoiceDelay() {
 
 // Calculates who the winner is
 
-/**
- * Compares player & computer choices
- * Calls other functions if true or false
-
-function chooseWinner() {
-    if (player == computer) {
-        resultsDraw();
-    } else if (computer == 'rock'){
-        (player == 'paper') ? resultsWin() : resultsLose();
-    } else if (computer == 'paper'){
-        (player == 'scissors') ? resultsWin() : resultsLose();
-    } else if (computer == 'scissors'){
-        (player == 'rock') ? resultsWin() : resultsLose();
-    }
-}
-*/
 
 function chooseWinner() {
     if (player == computer) {

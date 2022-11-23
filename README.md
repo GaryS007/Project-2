@@ -10,17 +10,23 @@ Players will need to pick the correct option to win a round and then reach 5 win
 
 **Header**
 
+![Header Image](https://garys007.github.io/Project-2/assets/images/header.png)
+
 - Located at the top of the page containing the name 'Rock Paper Scissors Game'.
 - Using the main website colour #39FF14.
 - Light & Dark Mode options are also featured as a part of the header.
 
 **Player & Computer Score**
 
+![Score Image](https://garys007.github.io/Project-2/assets/images/scores.png)
+
 - Player and Computer score is displayed here. 
 - Score is updated after the computers option is displayed.
 - This section is designed to reset after the player chooses to start a new game.
 
 **Game Area**
+
+![Game Area](https://garys007.github.io/Project-2/assets/images/game-area.png)
 
 - Player and Computer choices will be displayed here to offer a more visual element to the game.
 - Once player has selected an option, the computer choice will display 500ms later to build an element of suspense.
@@ -30,16 +36,22 @@ Players will need to pick the correct option to win a round and then reach 5 win
 
 **Results**
 
+![Results](https://garys007.github.io/Project-2/assets/images/results.png)
+
 - The result of each turn is displayed here.
 - The result being displayed is sharing the same timeout function as the computer choice being displayed. 
 - I created a removeResults function to remove the results each time an option is selected.
 
 **Player Choices**
 
+![Player Choices](https://garys007.github.io/Project-2/assets/images/options.png)
+
 - 3 Buttons to enable the player to pick Rock, Paper or Scissors. 
 - All buttons share the same retro styling.
 
 **Window Modals**
+
+![Modal Window](https://garys007.github.io/Project-2/assets/images/modal.png)
 
 - Main Modal Window - This modal window will launch when the player visits the website. It displays the rules of the game and includes a Start Game button that closes the modal window.
 - Win Modal Window - This modal window will launch when the player wins 5 rounds. It provides a congratulations message as well as the ability to play again.

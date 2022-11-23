@@ -30,7 +30,7 @@ p {
 .modal-content,
 #win-modal-content,
 #lose-modal-content {
-  background-color: #fefefe;
+  background-color: #39FF14;
   position: relative;
   z-index: 1;
   margin: 15% auto;
@@ -46,7 +46,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80%;
-  height: 65vh;
+  height: 30vh;
   max-height: 450px;
   max-width: 830px;
   margin-left: auto;
@@ -65,7 +65,7 @@ p {
 #computer-choice i,
 #player-choice i {
   font-size: 10rem;
-  padding-top: 5rem;
+  padding-top: 1rem;
   text-shadow: 1px 1px 3px #111;
 }
 
@@ -167,7 +167,7 @@ p {
   }
 
   #game-area {
-      height: 30vh;
+      height: 20vh;
   }
 
   #game-options {
@@ -176,8 +176,8 @@ p {
 
 }
 
-@media (max-width: 489px) {
-  .impossible--btn {
-      margin-top: 1rem;
+@media (max-width: 489px)  {
+    h3 {
+        margin-top: 3rem;
+    }
   }
-}

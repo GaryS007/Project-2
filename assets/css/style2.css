@@ -1,4 +1,11 @@
 /* -----Global Style----- */
+
+#test {
+  width: 80%;
+  height: 65vh;
+  background-color: red;
+}
+
 body {
   background-color: #424242;
   color: #39FF14;
@@ -53,7 +60,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80%;
-  height: 65vh;
+  height: 30vh;
   max-height: 450px;
   max-width: 830px;
   margin-left: auto;
@@ -72,7 +79,7 @@ p {
 #computer-choice i,
 #player-choice i {
   font-size: 10rem;
-  padding-top: 5rem;
+  padding-top: 1rem;
   text-shadow: 1px 1px 3px #000000;
 }
 
@@ -174,7 +181,7 @@ p {
   }
 
   #game-area {
-      height: 30vh;
+      height: 20vh;
   }
 
   #game-options {
@@ -184,7 +191,7 @@ p {
 }
 
 @media (max-width: 489px) {
-  .impossible--btn {
-      margin-top: 1rem;
+  h3 {
+      margin-top: 3rem;
   }
 }
