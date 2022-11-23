@@ -56,6 +56,9 @@ function reset() {
     computerScore = 0;
     playerScoreBox.innerText = playerScore;
     computerScoreBox.innerText = playerScore; 
+    computerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
+    playerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
+    removeResults();
 }
 
 // loseModal
