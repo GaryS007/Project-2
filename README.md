@@ -4,6 +4,8 @@ Rock Paper Scissors game is the original game we all know and love from when we 
 
 Players will need to pick the correct option to win a round and then reach 5 wins to beat the computer. It includes a Dark & Light mode theme option and is fun for anyone looking to revisit such a nostalgic game.
 
+![Responsive Design](https://garys007.github.io/Project-2/assets/images/responsive.png)
+
 ## Features
 
 ### Existing Features
@@ -14,7 +16,14 @@ Players will need to pick the correct option to win a round and then reach 5 win
 
 - Located at the top of the page containing the name 'Rock Paper Scissors Game'.
 - Using the main website colour #39FF14.
+
+**Light & Dark Mode Themes**
+
+![Light and Darkmode](https://garys007.github.io/Project-2/assets/images/header.png)
+
 - Light & Dark Mode options are also featured as a part of the header.
+- I implemented this simply change by having 2 separate stylesheets and using Javascript to switch between them. 
+- There are plenty of other methods to achieve this, for larger projects I wouldn't use the 2 stylesheet method. 
 
 **Player & Computer Score**
 
@@ -53,7 +62,7 @@ Players will need to pick the correct option to win a round and then reach 5 win
 
 ![Modal Window](https://garys007.github.io/Project-2/assets/images/modal.png)
 
-- Main Modal Window - This modal window will launch when the player visits the website. It displays the rules of the game and includes a Start Game button that closes the modal window.
+- Main Modal Window - This modal window will launch when the player visits the website. It displays the rules of the game and includes a Play Game button that closes the modal window.
 - Win Modal Window - This modal window will launch when the player wins 5 rounds. It provides a congratulations message as well as the ability to play again.
 - Lose Modal Window - This modal window will launch when the player loses 5 rounds. It notifies the player of their defeat and allows them to play again.
 
@@ -68,8 +77,8 @@ Players will need to pick the correct option to win a round and then reach 5 win
 - Github
 - HTML5
 - CSS3
-- Font Awesome - All Icons came from here
-- Gimp 2 - Used for resizing, cropping and compression of imagery
+- Font Awesome - All Icons came from here.
+- Gimp 2 - Used for resizing, cropping and compression of imagery.
 - MSPaint - Used to create wireframes instead of Balsamiq.
 
 ## Fonts & Colours
@@ -88,7 +97,10 @@ I used Neon Green as the primary colour and a dark grey/black as a secondary. I 
 
 ## Mock Design
 
+![Mock Design](https://garys007.github.io/Project-2/assets/images/mock.png)
+
 My subscription to Balsamiq expired so I used MSPaint to create a simple wireframe for my game. I made some alterations to the design during the build but this helped build the foundation of my game.
+
 
 ## Testing
 
@@ -98,13 +110,15 @@ All player option buttons were tested to check:
 
 - Every button is functioning as expected and displaying the appropriate value.
 - That the computers response provides a random value every turn.
-- That the computer response is done using the 500ms timeout.
+- That the computer response is displayed 1000ms after player turn.
 - That the result message is displaying the correct value depending on who won that round.
 
 All Modal Buttons were tested to ensure:
 
 - Modal window must close when the player clicks the appropriate button.
 - The scores reset when the modal window is closed.
+- The result section resets when the modal window is closed.
+- The Icons are reset back the original '?' icons.
 
 Light & Dark Mode themes:
 
@@ -117,4 +131,4 @@ Light & Dark Mode themes:
 
 - HTML - No errors were returned passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgarys007.github.io%2FProject-2%2F)
 - CSS - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgarys007.github.io%2FProject-2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-- JavaScript - 
+- JavaScript - I used JSHint to test my Javascript. It helped me spot and resolve some minor issues like missing semicolons.
