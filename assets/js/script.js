@@ -187,7 +187,7 @@ function scissorsChoiceAi() {
  * Removes computers choice
  */
 function removeChoiceAi() {
-    computerBox.innerHTML = '';
+    computerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
 }
 /**
  * Removes text from results section after each turn

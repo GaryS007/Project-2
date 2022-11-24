@@ -78,7 +78,7 @@ p {
 
 #computer-choice i,
 #player-choice i {
-  font-size: 10rem;
+  font-size: 9rem;
   padding-top: 1rem;
   text-shadow: 1px 1px 3px #000000;
 }
@@ -92,7 +92,7 @@ p {
 /* Results */
 
 #results {
-  height: 4vh;
+  height: 6vh;
   text-shadow: 1px 1px 3px #000000;
 }
 
@@ -146,6 +146,11 @@ p {
   transform: translate(8px, 8px);
   transition: transform .2s ease-out;
   z-index: -1;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  background-color: grey;
 }
 
 
