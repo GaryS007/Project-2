@@ -2,7 +2,7 @@
 
 // timeOut variables
 
-const computerChoiceTimeoutDelay = 1000;
+const computerChoiceTimeoutDelay = 500;
 const resultTimeoutDelay = 500;
 
 
@@ -31,11 +31,16 @@ winBtn.addEventListener('click', function() {
     closeWinModal();
 });
 
+const winModalText = document.getElementById('win-modal-text');
+const loseModalText = document.getElementById('lose-modal-text')
+
 /**
  * When the player wins this function changes display from none to block
+ * 
  */
 function launchWinModal() {
     winModal.style.display = "block";
+    winModalText.textContent = `Score: ${playerScore} - ${computerScore}`;
 
 }
 
@@ -75,6 +80,7 @@ loseBtn.addEventListener('click', function() {
  */
 function launchLoseModal() {
     loseModal.style.display = "block";
+    loseModalText.textContent = `Score: ${playerScore} - ${computerScore}`;
 }
 
 /**
@@ -94,7 +100,7 @@ let playerBox = document.getElementById('player-choice');
 
 
 /**
- * Inserts rock icon
+ * Inserts rock icon into playerBox
  */
 function rockChoice() {
     player = 'rock';
@@ -102,7 +108,7 @@ function rockChoice() {
 }
 
 /**
- * Inserts paper icon
+ * Inserts paper icon into playerBox
  */
 function paperChoice() {
     player = 'paper';
@@ -110,7 +116,7 @@ function paperChoice() {
 }
 
 /**
- * Inserts scissors icon
+ * Inserts scissors icon into playerBox
  */
 function scissorsChoice() {
     player = 'scissors';
@@ -126,7 +132,6 @@ let scissors = document.getElementById("scissors");
 
 
 rock.addEventListener('click', function() {
-    preventMultipleRockClicks();
     rockChoice();
     removeChoiceAi();
     removeResults();
@@ -134,7 +139,6 @@ rock.addEventListener('click', function() {
 });
 
 paper.addEventListener('click', function() {
-    preventMultiplePaperClicks();
     paperChoice();
     removeChoiceAi();
     removeResults();
@@ -142,7 +146,6 @@ paper.addEventListener('click', function() {
 });
 
 scissors.addEventListener('click', function() {
-    preventMultipleScissorsClicks();
     scissorsChoice();
     removeChoiceAi();
     removeResults();
@@ -150,14 +153,14 @@ scissors.addEventListener('click', function() {
 });
 
 
-// Computer Choices insert rock/paper/scissors after a 1 second delay
+// Computer Choices insert rock/paper/scissors after a 500ms delay
 
 let computer;
 
 let computerBox = document.getElementById('computer-choice');
 
 /**
- * Inserts computers choice of rock
+ * Inserts computers choice of rock into computerBox
  */
 function rockChoiceAi() {
     computer = 'rock';
@@ -165,7 +168,7 @@ function rockChoiceAi() {
 }
 
 /**
- * Inserts computers choice of paper
+ * Inserts computers choice of paper into computerBox
  */
 function paperChoiceAi() {
     computer = 'paper';
@@ -173,7 +176,7 @@ function paperChoiceAi() {
 }
 
 /**
- * Inserts computers choice of scissors
+ * Inserts computers choice of scissors into computerBox
  */
 function scissorsChoiceAi() {
     computer = 'scissors';
@@ -192,6 +195,8 @@ function removeChoiceAi() {
 function removeResults() {
     results.innerHTML = '';
 }
+
+// Array of computer options
 
 let computerOptions = [ 
     'rock',
@@ -331,12 +336,16 @@ let darkModeButton = document.getElementById('dark-btn');
 let lightModeButton = document.getElementById('light-btn');
 
 darkModeButton.addEventListener('click', function() {
-    darkMode();
+
+    if (darkModeButton.innerHTML == '<i class="fa-solid fa-moon"></i>') {
+        darkMode();
+        darkModeButton.innerHTML = '<i class="fa-solid fa-lightbulb"></i>';
+    } else {
+        lightMode();
+        darkModeButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }
 });
 
-lightModeButton.addEventListener('click', function() {
-    lightMode();
-});
 
 function darkMode() {
     stylesheet.href = 'assets/css/style2.css';
@@ -348,35 +357,24 @@ function lightMode() {
 
 // Disable multiple clicks on player choices
 
-/**
- * Prevents player from selecting Rock
- * More than once every 1000ms
- */
-function preventMultipleRockClicks() {
-    rock.disabled = true;
-    setTimeout(function() {
-        rock.disabled = false;
-    }, resultTimeoutDelay );
+
+let playerBtn = document.querySelectorAll('.player-btn');
+
+for (let i = 0; i < playerBtn.length; i++) {
+
+    playerBtn[i].addEventListener('click', function() {
+        preventMultipleClicks();
+    });
 }
 
-/**
- * Prevents player from selecting Paper
- * More than once every 1000ms
- */
-function preventMultiplePaperClicks() {
-    paper.disabled = true;
+function preventMultipleClicks() {
+    for (let i = 0; i < playerBtn.length; i++) {
+        playerBtn[i].disabled = true;
+    }
+    
     setTimeout(function() {
-        paper.disabled = false;
-    }, resultTimeoutDelay );
-}
-
-/**
- * Prevents player from selecting Scissors
- * More than once every 1000ms
- */
-function preventMultipleScissorsClicks() {
-    scissors.disabled = true;
-    setTimeout(function() {
-        scissors.disabled = false;
+        for (let i = 0; i < playerBtn.length; i++) {
+            playerBtn[i].disabled = false;
+        }
     }, resultTimeoutDelay );
 }

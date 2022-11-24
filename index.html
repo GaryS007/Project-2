@@ -17,8 +17,7 @@
 
 <body>
     <!-- Main Modal that pops up when game loads -->
-    <button id="dark-btn" class="btn btn2"><i class="fa-solid fa-moon"></i></button>
-    <button id="light-btn" class="btn btn2"><i class="fa-solid fa-lightbulb"></i></button>
+    <button id="dark-btn" class="btn btn2"><i class="fa-solid fa-lightbulb"></i></button>
     <div id="main-modal">
         <div class="modal-content">
             <h2>Rock Paper Scissors Game!</h2>
@@ -36,14 +35,17 @@
     <div id="win-modal-container" style="display: none;">
         <div id="win-modal-content">
             <h2 id="win-txt">Congratulations, luck is on your side!</h2>
-            <p>You have successfully defeated the computer!</p>
+            <p>You have successfully beaten the computer!</p>
+            <p id="win-modal-text">Text comes from Javascript</p>
             <p>Want to try again?</p>
             <button data-type="close-modal" id="win-btn" class="btn btn2">Play Again</button>
         </div>
     </div>
     <div id="lose-modal-container" style="display: none;">
         <div id="lose-modal-content">
-            <h2>DEFEAT! You have been defeated by the Computer!</h2>
+            <h2>DEFEAT!</h2>
+            <p>You have been defeated by the Computer!</p>
+            <p id="lose-modal-text">Text comes from Javascript</p>
             <p>Don't be to upset though, you can always Play Again!</p>
             <button data-type="close-modal" id="lose-btn" class="btn btn2">Play Again</button>
         </div>
@@ -79,13 +81,13 @@
     <!-- Player game choices section -->
     <div id="game-options">
         <p>Choose one option:</p>
-        <button id="rock" class="btn">
+        <button id="rock" class="btn player-btn">
             <i class="fa-solid fa-hand-back-fist"></i>
         </button>
-        <button id="paper" class="btn">
+        <button id="paper" class="btn player-btn">
             <i class="fa-solid fa-paper-plane"></i>
         </button>
-        <button id="scissors" class="btn">
+        <button id="scissors" class="btn player-btn">
             <i class="fa-solid fa-scissors"></i>
         </button>
     </div>
