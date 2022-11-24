@@ -105,7 +105,7 @@ p {
   margin-right: auto;
 }
 
-/* Button Styling - https://getcssscan.com/css-buttons-examples - Made adjustments  */
+/* Button Styling - https://getcssscan.com/css-buttons-examples - Made adjustments and added a :disable pseudo class */
 .btn {
   align-items: center;
   font-weight: bolder;

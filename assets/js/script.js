@@ -1,20 +1,79 @@
 /*jshint esversion: 6 */
 
+// Global Variables
+
+let gameFinished = false;
+
+// Player button variables
+
+let playerBtn = document.querySelectorAll('.player-btn');
+
+let rock = document.getElementById("rock");
+let paper = document.getElementById("paper");
+let scissors = document.getElementById("scissors");
+
+// Default Player Variables
+
+let playerScore = 0;
+let computerScore = 0;
+
+let playerScoreBox = document.getElementById('player-score');
+let computerScoreBox = document.getElementById('computer-score');
+
+let player;
+
+let playerBox = document.getElementById('player-choice');
+
+// Computer Variables
+
+let computerOptions = [ 
+    'rock',
+    'paper',
+    'scissors'
+];
+
+let computer;
+
+let computerBox = document.getElementById('computer-choice');
+
+// Light & Dark Mode Variables
+
+let stylesheet = document.getElementById('stylesheet');
+let darkModeButton = document.getElementById('dark-btn');
+let lightModeButton = document.getElementById('light-btn');
+
+// Results variables
+
+let results = document.getElementById('results');
+
 // timeOut variables
 
-const computerChoiceTimeoutDelay = 500;
-const resultTimeoutDelay = 500;
+const mainDelay = 500;
+const btnDelay = 500;
+
+// Modal Variables
+
+let loseModal = document.getElementById("lose-modal-container");
+let loseBtn = document.getElementById("lose-btn");
+
+const winModalText = document.getElementById('win-modal-text');
+const loseModalText = document.getElementById('lose-modal-text');
+
+let winModal = document.getElementById("win-modal-container");
+let winBtn = document.getElementById("win-btn");
+
+let modal = document.getElementById("main-modal");
+let btn = document.getElementById("modal-button");
+
+// Code that controls Main Modal, Win Modal and Lose Modal
 
 
 /**
- * closeModal allows player to close the Modal when you Start Game
+ * closeModal allows player to close the main Modal Window when you first open the website
  */
 function closeModal() {
     modal.style.display = "none";
 }
-
-let modal = document.getElementById("main-modal");
-let btn = document.getElementById("modal-button");
 
 btn.addEventListener('click', function() {
     closeModal();
@@ -24,18 +83,16 @@ btn.addEventListener('click', function() {
 
 // launchWinModal / closeWinModal acknowledges victory and resets score if they Play Again 
 
-let winModal = document.getElementById("win-modal-container");
-let winBtn = document.getElementById("win-btn");
 
 winBtn.addEventListener('click', function() {
+    gameFinished = false;
+    enablePlayerBtns();
     closeWinModal();
 });
 
-const winModalText = document.getElementById('win-modal-text');
-const loseModalText = document.getElementById('lose-modal-text')
 
 /**
- * When the player wins this function changes display from none to block
+ * When the player wins this function changes display from none; to block;
  * 
  */
 function launchWinModal() {
@@ -53,25 +110,11 @@ function closeWinModal() {
     reset();
 }
 
-/**
-* Resets player & computer score.
-*/
-function reset() {
-    playerScore = 0;
-    computerScore = 0;
-    playerScoreBox.innerText = playerScore;
-    computerScoreBox.innerText = playerScore; 
-    computerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
-    playerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
-    removeResults();
-}
-
 // loseModal
 
-let loseModal = document.getElementById("lose-modal-container");
-let loseBtn = document.getElementById("lose-btn");
-
 loseBtn.addEventListener('click', function() {
+    gameFinished = false;
+    enablePlayerBtns();
     closeLoseModal();
 });
 
@@ -92,12 +135,25 @@ function closeLoseModal() {
     reset();
 }
 
+
+// Reset Player Score Code
+
+/**
+* Resets player & computer score.
+*/
+function reset() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreBox.innerText = playerScore;
+    computerScoreBox.innerText = playerScore; 
+    computerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
+    playerBox.innerHTML = '<i class="fa-solid fa-question"></i>';
+    removeResults();
+}
+
+
+
 // Player Choice inserts rock/paper/scissors icon
-
-let player;
-
-let playerBox = document.getElementById('player-choice');
-
 
 /**
  * Inserts rock icon into playerBox
@@ -126,10 +182,6 @@ function scissorsChoice() {
 
 // Event Listeners for Rock/Paper/Scissors buttons
 
-let rock = document.getElementById("rock");
-let paper = document.getElementById("paper");
-let scissors = document.getElementById("scissors");
-
 
 rock.addEventListener('click', function() {
     rockChoice();
@@ -154,10 +206,6 @@ scissors.addEventListener('click', function() {
 
 
 // Computer Choices insert rock/paper/scissors after a 500ms delay
-
-let computer;
-
-let computerBox = document.getElementById('computer-choice');
 
 /**
  * Inserts computers choice of rock into computerBox
@@ -196,13 +244,7 @@ function removeResults() {
     results.innerHTML = '';
 }
 
-// Array of computer options
 
-let computerOptions = [ 
-    'rock',
-    'paper',
-    'scissors'
-];
 
 /**
  * Randomly selects computers choice from array of computerOptions
@@ -228,7 +270,7 @@ function computerChoiceDelay() {
             computerChoice();
             chooseWinner();
 
-        }, computerChoiceTimeoutDelay);
+        }, mainDelay);
     }
 
 // Calculates who the winner is
@@ -251,7 +293,6 @@ function isPlayerVictorious() {
             (computer =='scissors' && player == 'rock');
 }
 
-let results = document.getElementById('results');
 /**
  * Changes results text to show who won the round
  * calls IncrementPlayerScore() function
@@ -261,10 +302,12 @@ function resultsWin() {
     results.innerHTML = '<h4>You Win!</h4>';
     incrementPlayerScore();
     if (playerScore == 5) {
+        gameFinished = true;
+        disablePlayerBtns();
         setTimeout(
             function() {
                 gameOver(true);
-            }, resultTimeoutDelay
+            }, mainDelay
         );
     }
 
@@ -279,13 +322,18 @@ function resultsLose() {
     results.innerHTML = '<h4>You Lose!</h4>';
     incrementComputerScore();
     if (computerScore == 5) {
+        gameFinished = true;
+        disablePlayerBtns();
         setTimeout(
             function() {
                 gameOver(false);
-            }, resultTimeoutDelay
+            }, mainDelay
         );
     }
 }
+
+
+
 
 /**
  * Displays text in the results section when there is a draw
@@ -295,12 +343,6 @@ function resultsDraw() {
 }
 
 // Increment Player & Computer Score
-
-let playerScore = 0;
-let computerScore = 0;
-
-let playerScoreBox = document.getElementById('player-score');
-let computerScoreBox = document.getElementById('computer-score');
 
 /**
  * Increment player by 1
@@ -331,9 +373,6 @@ function gameOver(win) {
 
 // Light & Dark Mode functions
 
-let stylesheet = document.getElementById('stylesheet');
-let darkModeButton = document.getElementById('dark-btn');
-let lightModeButton = document.getElementById('light-btn');
 
 darkModeButton.addEventListener('click', function() {
 
@@ -358,8 +397,6 @@ function lightMode() {
 // Disable multiple clicks on player choices
 
 
-let playerBtn = document.querySelectorAll('.player-btn');
-
 for (let i = 0; i < playerBtn.length; i++) {
 
     playerBtn[i].addEventListener('click', function() {
@@ -368,13 +405,24 @@ for (let i = 0; i < playerBtn.length; i++) {
 }
 
 function preventMultipleClicks() {
+    disablePlayerBtns();
+
+    
+    setTimeout(function() {
+        enablePlayerBtns();
+    }, btnDelay );
+}
+
+function disablePlayerBtns() {
     for (let i = 0; i < playerBtn.length; i++) {
         playerBtn[i].disabled = true;
     }
-    
-    setTimeout(function() {
-        for (let i = 0; i < playerBtn.length; i++) {
-            playerBtn[i].disabled = false;
+}
+
+function enablePlayerBtns() {
+    for (let i = 0; i < playerBtn.length; i++) {
+        if (gameFinished == false) {
+        playerBtn[i].disabled = false;
         }
-    }, resultTimeoutDelay );
+    }    
 }
