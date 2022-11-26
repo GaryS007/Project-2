@@ -2,9 +2,13 @@
 
 Rock Paper Scissors game is the original game we all know and love from when we were kids. This is a web based game that was built using HTML, CSS and Javascript. 
 
-Players will need to pick the correct option to win a round and then reach 5 wins to beat the computer. It includes a Dark & Light mode theme option and is fun for anyone looking to revisit such a nostalgic game.
+Players will need to pick the correct option to win a round and then reach 5 wins to beat the computer. It includes a Dark & Light mode theme option and is fun for anyone looking to revisit such a nostalgic game. 
+
+There is an intentional delay built into the game, after you choose an option the computers option & results will be displayed after 500ms. 
 
 ![Responsive Design](https://garys007.github.io/Project-2/assets/images/responsive.png)
+
+Visit the deployed website - [Live link to website](https://garys007.github.io/Project-2/)
 
 ## Features
 
@@ -19,11 +23,13 @@ Players will need to pick the correct option to win a round and then reach 5 win
 
 **Light & Dark Mode Themes**
 
-![Light and Darkmode](https://garys007.github.io/Project-2/assets/images/header.png)
+![Darkmode](https://garys007.github.io/Project-2/assets/images/header.png)
+![Lightmode](https://garys007.github.io/Project-2/assets/images/header2.png)
 
-- Light & Dark Mode options are also featured as a part of the header.
-- I implemented this simply change by having 2 separate stylesheets and using Javascript to switch between them. 
-- There are plenty of other methods to achieve this, for larger projects I wouldn't use the 2 stylesheet method. 
+- Light & Dark Mode options are also featured as a part of the header. 
+- It is a simple toggle button that changes the font awesome icon depending on what mode is selected.
+- I implemented this by having 2 separate stylesheets and using Javascript to switch between them. 
+- There are plenty of other methods to achieve this, for larger projects I wouldn't use the 2 stylesheet method.
 
 **Player & Computer Score**
 
@@ -31,7 +37,7 @@ Players will need to pick the correct option to win a round and then reach 5 win
 
 - Player and Computer score is displayed here. 
 - Score is updated after the computers option is displayed.
-- This section is designed to reset after the player chooses to start a new game.
+- This section is designed to reset everytime the player chooses to 'Play Again' after winning or losing.
 
 **Game Area**
 
@@ -66,10 +72,18 @@ Players will need to pick the correct option to win a round and then reach 5 win
 - Win Modal Window - This modal window will launch when the player wins 5 rounds. It provides a congratulations message as well as the ability to play again.
 - Lose Modal Window - This modal window will launch when the player loses 5 rounds. It notifies the player of their defeat and allows them to play again.
 
+**Results/Computer Choice/Button Delays**
+
+- I implemented a 500ms timeout to all 3 player options as well as a 500ms delay on the computer choice and results section.
+- When player chooses Rock and Computer randomly generates Rock 2 times in a row, it felt like nothing happened or changed. So adding in a delay was a fun way to fix that.
+- The buttons also get disabled to prevent spamming the player choices, allowing players to spam also created a bug which the delay fixed nicely.
+- The delay can be removed or increased by changing the Javascript variable created for the timeout.
+
 ### Future Implementations
 
 - Add game difficulties that changes the computer logic and increases the computer chance to win by allowing the computer to roll twice to defeat the player.
 - Add sound options for click sounds when buttons are pressed and when win/lose modal appears.
+- Add an Array of random win/lose messages so each win or loss feels more unique.
 
 ## Tecnologies Used
 
@@ -99,7 +113,7 @@ I used Neon Green as the primary colour and a dark grey/black as a secondary. I 
 
 ![Mock Design](https://garys007.github.io/Project-2/assets/images/mock.png)
 
-My subscription to Balsamiq expired so I used MSPaint to create a simple wireframe for my game. I made some alterations to the design during the build but this helped build the foundation of my game.
+My subscription to Balsamiq expired so I used MSPaint to create a simple wireframe for my game. I made some alterations to the design during the build but this helped build the foundation of my game. While this might not be the best designed mock, it really helped me visualize a layout.
 
 
 ## Testing
@@ -110,8 +124,9 @@ All player option buttons were tested to check:
 
 - Every button is functioning as expected and displaying the appropriate value.
 - That the computers response provides a random value every turn.
-- That the computer response is displayed 1000ms after player turn.
-- That the result message is displaying the correct value depending on who won that round.
+- That the computer response is displayed 500ms after player turn.
+- That the result message is displaying the correct value depending on who won that round and also shares the 500ms delay.
+- Each button shares a 500ms delay and will disable after a click. This is intentional and the buttons will turn to grey to indicate that.
 
 All Modal Buttons were tested to ensure:
 
@@ -124,11 +139,63 @@ Light & Dark Mode themes:
 
 - Tested to ensure the correct theme is applied.
 - Tested to ensure scores are not affected in the middle of a game when theme is changed.
+- Tested to ensure the toggle button icon changes on click.
 
+**Responsiveness**
 
+I ensured that the website is responsive by using Dev tools and testing each individual device. I also tested on various mobile devices directly.
+
+The website was also tested on various browsers, operating systems and mobile devices:
+
+- Google Chrome
+- Opera
+- Firefox
+- Microsoft Edge
+- Safari
+- iPhone SE
+- iPhone XR
+- iPhone 12 Pro
+- Pixel 5
+- Samsung Galaxy S8+
+- Samsung Galaxy S20 Ultra
+- iPad Air
+- iPad Mini
+- Surface Pro 7
+- Surface Duo
+- Galaxy Fold
+- Samsung Galaxy a51/71
+- Nest Hub
+- Nest Hub Max
 
 ### Validator Testing
 
 - HTML - No errors were returned passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgarys007.github.io%2FProject-2%2F)
 - CSS - No errors were found when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgarys007.github.io%2FProject-2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript - I used JSHint to test my Javascript. It helped me spot and resolve some minor issues like missing semicolons.
+
+## Deployment
+
+I deployed my website on day 1 as this allows me to test on my mobile device straight away. Doing regular commits and pushes daily, but being able to see my code on local vs live website was great. 
+ 
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+    - In the GitHub repository, navigate to the Settings tab
+    - From the source section drop-down menu, select the Master Branch
+    - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+- When using GitPod I keep my repository updated everytime I make changes.
+    - In GitPod Terminal I would type 'git add .' to add my changes.
+    - I would then type 'git commit -m "And put a relevant message here so I understand what the update was in relation to".
+    - To then final push my changes to my repository I would type 'git push'.
+    - This process was repeated each time I wanted to push changes. Doing it at regular intervals making it easy to back up if I made any serious mistakes.
+
+    The live link can be found here - https://garys007.github.io/Portfolio-1-Gary/index.html
+
+
+
+## Credits 
+
+- I used a button design from this example - https://getcssscan.com/css-buttons-examples - I really liked this design.
+- I watched multiple videos to help me implement and remember ways to utilize JavaScript - https://www.youtube.com/@coderlipi3421
+- FontAwesome was used for all Icons used in my game.
+- Thanks to my mentor Sandeep Aggarwal for all his help.
+- Thanks to our slack group for keeping me motivated.
